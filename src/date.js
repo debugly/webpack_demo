@@ -1,6 +1,5 @@
-const date = {
-    now: function () {
-
+class DateUtil {
+    now() {
         // 将 Date 转化为指定格式的String
         // 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符， 
         // 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字) 
@@ -27,6 +26,6 @@ const date = {
         const str = DateFormat(new Date(), "yyyy-MM-dd HH:mm:ss");
         return str;
     }
-};
+}
 
-export default date;
+export default DateUtil;

@@ -4,11 +4,14 @@
   "description": "my webpack study demo.",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "server": "./node_modules/.bin/webpack-dev-server"
+    "server": "./node_modules/.bin/webpack-dev-server --config webpack-server.config.js"
   },
   "author": "qianlongxu@sohu-inc.com",
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.15.1",

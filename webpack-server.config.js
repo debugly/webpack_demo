@@ -3,8 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  mode: 'production',//'development',
-  entry: './src/index.js',
+  mode: 'development',
+  entry: {
+    app: ['./src/index.js',
+      'webpack-dev-server/client?http://localhost:8080/'
+    ]
+  },
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -13,8 +17,14 @@ module.exports = {
   plugins: [new HtmlWebpackPlugin({
     template: 'src/templete-index.html',
     title: 'Matt Reach'
-  })
+  }), new webpack.HotModuleReplacementPlugin()
   ],
+  devServer: {
+    overlay: true,
+    stats: "errors-only",
+    inline: true,
+    hot: true
+  },
   module: {
     rules: [
       {
@@ -29,4 +39,5 @@ module.exports = {
       }
     ]
   }
+
 };

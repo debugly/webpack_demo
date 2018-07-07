@@ -1,9 +1,10 @@
-import date from './date.js'
+import DateUtil from './date.js'
 import ui from './ui.js'
 
 const div = ui.create();
+const dateUtil = new DateUtil();
 
-ui.show(div,date.now());
-setInterval(function(){       
-    ui.show(div,date.now());
-},1000);
+ui.show(div, dateUtil.now());
+setInterval(function () {
+    ui.show(div, dateUtil.now());
+}, 1000);
